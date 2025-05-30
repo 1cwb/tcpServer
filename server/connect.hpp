@@ -28,7 +28,7 @@ public:
     _fd(sockfd),
     _inactiveRelease(false),
     _loop(loop),
-    _state(ConnectionState::K_DISCONNECTED),
+    _state(ConnectionState::K_CONNECTING),
     _socket(sockfd),
     _channel(sockfd, loop)
     {

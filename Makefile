@@ -93,7 +93,7 @@ VPATH			 := $(SRCDIRS)
 $(OUTPUTDIR)/$(TARGET).elf:$(OBJS)
 	$(CC) -o $(OUTPUTDIR)/$(TARGET).elf $^ $(LFLAGS)
 	$(OBJCOPY) -O binary -S $(OUTPUTDIR)/$(TARGET).elf $(OUTPUTDIR)/$(TARGET).bin
-	$(OBJDUMP) -D -m arm $(OUTPUTDIR)/$(TARGET).elf > $(OUTPUTDIR)/$(TARGET).dis
+	$(OBJDUMP) -D $(OUTPUTDIR)/$(TARGET).elf > $(OUTPUTDIR)/$(TARGET).dis
 	$(SIZEINFO) $@
 
 $(COBJS) : $(OUTPUTDIR)/%.o : %.c
